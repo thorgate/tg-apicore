@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+
+"""Top-level package for Thorgate API Core."""
+
+__author__ = """Thorgate"""
+__email__ = 'code@thorgate.eu'
+__version__ = '0.1.0'
