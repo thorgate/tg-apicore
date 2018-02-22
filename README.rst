@@ -3,11 +3,11 @@ Thorgate API Core
 =================
 
 
-.. image:: https://img.shields.io/pypi/v/tg_apicore.svg
-        :target: https://pypi.python.org/pypi/tg_apicore
+.. image:: https://img.shields.io/pypi/v/tg-apicore.svg
+        :target: https://pypi.python.org/pypi/tg-apicore
 
-.. image:: https://img.shields.io/travis/thorgate/tg_apicore.svg
-        :target: https://travis-ci.org/thorgate/tg_apicore
+.. image:: https://img.shields.io/travis/thorgate/tg-apicore.svg
+        :target: https://travis-ci.org/thorgate/tg-apicore
 
 .. image:: https://readthedocs.org/projects/tg-apicore/badge/?version=latest
         :target: https://tg-apicore.readthedocs.io/en/latest/?badge=latest

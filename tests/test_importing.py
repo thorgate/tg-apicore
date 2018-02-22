@@ -1,4 +1,4 @@
-import django
+# flake8: noqa
 
 
 def test_imports():

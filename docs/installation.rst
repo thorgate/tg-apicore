@@ -12,7 +12,7 @@ To install Thorgate API Core, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install tg_apicore
+    $ pip install tg-apicore
 
 This is the preferred method to install Thorgate API Core, as it will always install the most recent stable release.
 
@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/thorgate/tg_apicore
+    $ git clone git://github.com/thorgate/tg-apicore
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/thorgate/tg_apicore/tarball/master
+    $ curl  -OL https://github.com/thorgate/tg-apicore/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/thorgate/tg_apicore
-.. _tarball: https://github.com/thorgate/tg_apicore/tarball/master
+.. _Github repo: https://github.com/thorgate/tg-apicore
+.. _tarball: https://github.com/thorgate/tg-apicore/tarball/master

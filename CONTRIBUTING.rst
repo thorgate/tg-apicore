@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/thorgate/tg_apicore/issues.
+Report bugs at https://github.com/thorgate/tg-apicore/issues.
 
 If you are reporting a bug, please include:
 
@@ -45,7 +45,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/thorgate/tg_apicore/issues.
+The best way to send feedback is to file an issue at https://github.com/thorgate/tg-apicore/issues.
 
 If you are proposing a feature:
 
@@ -57,17 +57,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `tg_apicore` for local development.
+Ready to contribute? Here's how to set up `tg-apicore` for local development.
 
-1. Fork the `tg_apicore` repo on GitHub.
+1. Fork the `tg-apicore` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/tg_apicore.git
+    $ git clone git@github.com:your_name_here/tg-apicore.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv tg_apicore
-    $ cd tg_apicore/
+    $ mkvirtualenv tg-apicore
+    $ cd tg-apicore/
     $ python setup.py develop
 
 4. Create a branch for local development::
@@ -102,8 +102,8 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/thorgate/tg_apicore/pull_requests
+3. The pull request should work for Python 3.5 and 3.6. Check
+   https://travis-ci.org/thorgate/tg-apicore/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
@@ -111,7 +111,7 @@ Tips
 
 To run a subset of tests::
 
-$ py.test tests.test_tg_apicore
+$ py.test tests.test_importing
 
 
 Deploying

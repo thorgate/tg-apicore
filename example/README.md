@@ -1,4 +1,4 @@
-## Example Project for tg_apicore
+## Example Project for tg-apicore
 
 This example is provided as a convenience feature to allow potential users to try the app straight from the app repo without having to create a django project.
 
