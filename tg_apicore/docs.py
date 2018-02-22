@@ -1,6 +1,6 @@
 import json
 import logging
-from typing import List
+from typing import List  # NOQA
 
 from django.utils.safestring import mark_safe
 

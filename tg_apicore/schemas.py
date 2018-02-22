@@ -136,7 +136,7 @@ class ApiDocsGenerator(SchemaGenerator):
             return view.get_docs_serializer()
 
         serializer_class = getattr(view, 'serializer_docs_class', None) or \
-                           getattr(view, 'serializer_detail_class', None) or getattr(view, 'serializer_class', None)
+            getattr(view, 'serializer_detail_class', None) or getattr(view, 'serializer_class', None)
         if serializer_class is None:
             return None
 
