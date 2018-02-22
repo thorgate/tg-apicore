@@ -11,7 +11,15 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = [
+    'Django>=1.11,<2.1',
+    'djangorestframework>=3.6,<4',
+    'djangorestframework-jsonapi>=2.4,<3',
+    'attrs>=17.2.0',
+    'coreapi>=2.3',
+    'Markdown>=2.6',
+    'Pygments>=2.2',
+]
 
 setup_requirements = ['pytest-runner', ]
 

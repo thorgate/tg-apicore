@@ -1,0 +1,16 @@
+{% load tg_apicore %}
+
+
+Example request:
+
+<pre class="highlight"><code>{% code python %}import requests
+
+api_root = '{{ api.site_url }}{{ api.base_path }}'
+headers = {
+    'Authorization': 'Bearer MY_ACCESS_TOKEN',
+}
+{% if method.request_data %}
+# data to be included in the request body
+data = {{ method.request_data_json }}{% endif %}
+r = requests.{{ method.method|lower }}(api_root + '{{ method.path }}', headers=headers{% if method.request_data %}, json=data{% endif %})
+{% endcode %}</code></pre>

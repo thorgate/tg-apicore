@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load tg_apicore static %}
+
+
+{% block head_extra %}{{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/tg_apicore.css' %}" />
+    <style>{{ code_style }}</style>
+{% endblock head_extra %}
+
+{% block body_content %}
+    {% include "tg_apicore/docs/sidebar.html" %}
+
+    <main class="api-docs-main">
+        <div class="col-12 p-4" id="intro">
+            {% render_markdown api.description %}
+        </div>
+
+        {% for section in api.sections %}
+            {% include "tg_apicore/docs/section.html" with section=section %}
+
+            {% for method in section.methods %}
+                {% include "tg_apicore/docs/method.html" with section=section method=method %}
+            {% endfor %}
+        {% endfor %}
+    </main>
+{% endblock body_content %}

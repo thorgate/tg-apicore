@@ -1,0 +1,54 @@
+{% load tg_apicore %}
+
+
+<div class="section-heading" id="section-{{ section.name }}">
+    <h2>{{ section.name|capfirst }}</h2>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-6">
+        {% render_markdown section.docstring %}
+
+        {% if section.fields %}
+            <h5>Attributes</h5>
+            <ul>
+                {% for field in section.fields %}
+                    <li>
+                        <code>{{ field.name }}</code>
+                        {% if field.is_create_only %}
+                            <span class="badge badge-light">Create-only</span>
+                        {% elif field.is_read_only %}
+                            <span class="badge badge-light">Read-only</span>
+                        {% endif %}
+                        {% if field.is_required %}
+                            <span class="badge badge-light">Required</span>
+                        {% endif %}
+                        <br>
+                        {{ field.description }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if section.changelog %}
+            <h5>Changelog</h5>
+            <ul>
+                {% for version, changes in section.changelog_items %}
+                    <li class="inline-p">
+                        <strong>{{ version }}</strong> &ndash;
+                        {% render_markdown changes %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="col-md-6">
+        {% if section.data %}
+            Example data:
+            <pre class="highlight json"><code>{% code json %}{{ section.data_json }}{% endcode %}</code></pre>
+        {% endif %}
+    </div>
+</div>
+</div>

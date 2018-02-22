@@ -1,0 +1,33 @@
+{% load tg_apicore %}
+
+
+<div class="section-subheading" id="section-{{ section.name }}-{{ method.action }}">
+    <h3>
+        <a class="text-light" href="#section-{{ section.name }}">{{ section.name|capfirst }}</a>
+        &rsaquo;
+        {{ method.action }}
+    </h3>
+</div>
+
+<div class="container-fluid"><div class="row">
+    <div class="col-md-6">
+        <p>
+            <strong>{{ method.method }}</strong> <code>{{ api.base_path }}{{ method.path }}</code>
+        </p>
+        {% render_markdown method.docstring %}
+    </div>
+
+    <div class="col-md-6">
+        {% include "tg_apicore/docs/method-python.html" with section=section method=method %}
+
+        {% for response_name, response_json in method.responses_items %}
+            {{ response_name }}:
+
+            {% if response_json is None %}
+                <pre class="highlight no-content">No content</pre>
+            {% else %}
+                <pre class="highlight json"><code>{% code json %}{{ response_json }}{% endcode %}</code></pre>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div></div>

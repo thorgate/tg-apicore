@@ -1,0 +1,23 @@
+{% load tg_apicore %}
+
+
+<nav class="api-docs-sidebar bg-dark text-light">
+    <div class="api-brand">
+        <a class="text-light" href="#intro">{{ api.title }}</a>
+    </div>
+
+    {% render_markdown_toc api.description %}
+
+    {% for section in api.sections %}
+        <a class="text-light" href="#section-{{ section.name }}">
+            <strong>{{ section.name|capfirst }}</strong>
+        </a><br>
+
+        {% for method in section.methods %}
+            <a class="text-light" href="#section-{{ section.name }}-{{ method.action }}">
+                {{ method.action }}
+            </a><br>
+        {% endfor %}
+        <br>
+    {% endfor %}
+</nav>
