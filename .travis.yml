@@ -20,7 +20,14 @@ deploy:
   distributions: sdist bdist_wheel
   user: thorgate
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: >
+      cPHAt/keGNiwKieHN2EGWaXdiHdQqBjoC6YIOOArBd4AuvrJZN50wCHloyylt3tMDi0VQ8uUHyWda632+3Q7+bghYhyIX7ml7hhRzHMZzjNek
+      7Z+wZetjLUFFF+A2dq1kw6TKSlcErcdBRsiDsAAvTotnA+FmRIg/oqG0fJGk7kQof+8qYrx57Kj55GyD4xL6z4BTQ5WLYYojD46Zo7tD1fStF
+      C5aG61apaairdzqdo6bw43vit7jyyIHwCsmCNADRS7sSb4mXn+HsjjlkoW/qVu1Z5njPvaRuMkrewMT3wBy8M7Yb2s8LY97p4trI/SzWBxAOI
+      qnoJPd8S7r4i2mI4Eb05+3mjxm/wfMJDEQC/8Bo5+aZhl58dTZagUl1Ne/8JJIiE72408cZcu8O21LpnF5TL5MT+IqLIz3O90gRF65JAdDBB9
+      ogVSIgjlOm6c3peaYi6UtmiWSzZQ1aPUqlGnkn3YGkQ3oQuZFiiRZfUXBNTI40d9lEK6vISmESUqq8gsJl6ZugC9indOTDDGgUPppDrqUnCDO
+      KOr5AmwHmVKg2a9dDuf4aBG/5+GNpzdrULhN5S3TRvXvh465TJWApDi2AGi9oaaUEsaS5NvWqNVI+UCOVjVZDmfGTXWzqGshjk9i2eV48HLKH
+      Y2Y1mbeyr3PWcbYaM3OXcy1xPMbsQ=
   on:
     tags: true
     repo: thorgate/tg-apicore
