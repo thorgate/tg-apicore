@@ -19,9 +19,10 @@ Opinionated API framework on top of Django REST framework
 
 * Free software: ISC license
 
-See `example` directory for a demo on how to use it.
+See ``example`` directory for a demo on how to use it.
 
 Supports Python 3.5+, Django 1.11+, Django REST framework 3.6+
+
 
 Features
 --------
@@ -35,9 +36,10 @@ Features
     * Cursor pagination with configurable page size
 * Test utilities, e.g. for response validation
 * Versioning (WIP)
-    * Transformed-based approach, inspired by
+    * Transformer-based approach, inspired by
       `djangorestframework-version-transforms <https://github.com/mrhwick/django-rest-framework-version-transforms>`_
       and `Stripe <https://stripe.com/blog/api-versioning>`_
+
 
 Credits
 -------
