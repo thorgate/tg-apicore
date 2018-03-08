@@ -2,7 +2,9 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from example.views import ExampleAPIDocumentationView, PageNotFoundView
+from tg_apicore.views import PageNotFoundView
+
+from example.views import ExampleAPIDocumentationView
 
 
 urlpatterns = [
@@ -12,10 +14,7 @@ urlpatterns = [
     url(r'^api/(?P<version>(\d{4}-\d{2}-\d{2}))/', include('example.urls_api')),
 
     # API-specific 404 for everything under api/ prefix
-    # This one is for when the version is valid
-    url(r'^api/(?P<version>(\d{4}-\d{2}-\d{2}))/', PageNotFoundView.as_view()),
-    # This one is catch-all for everything else, including invalid versions
-    url(r'^api/', PageNotFoundView.as_view()),
+    url(r'^api/', include(PageNotFoundView.urlpatterns())),
 
     url(r'^admin/', admin.site.urls),
 ]
