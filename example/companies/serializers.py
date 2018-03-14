@@ -1,9 +1,11 @@
 from rest_framework_json_api import serializers
 
+from tg_apicore.serializers import BaseModelSerializer
+
 from companies.models import Company, Employment
 
 
-class EmploymentSummarySerializer(serializers.ModelSerializer):
+class EmploymentSummarySerializer(BaseModelSerializer):
     class Meta:
         model = Employment
         fields = ['id', 'url', 'created', 'name', 'email', 'role']
@@ -18,7 +20,7 @@ class EmploymentSummarySerializer(serializers.ModelSerializer):
         return obj.user.email
 
 
-class CompanySummarySerializer(serializers.ModelSerializer):
+class CompanySummarySerializer(BaseModelSerializer):
     class Meta:
         model = Company
         fields = ['id', 'url', 'created', 'name', 'email']
