@@ -3,8 +3,10 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from companies import api_docs
 from companies.models import Company, Employment
-from companies.serializers import CompanySerializer, EmploymentSerializer
+from companies.serializers import CompanySerializer, EmploymentSerializer, CompanySummarySerializer, \
+    EmploymentSummarySerializer
 from tg_apicore.docs import add_api_docs, api_section_docs, api_method_docs
+from tg_apicore.viewsets import DetailSerializerViewSet
 
 
 @add_api_docs(
@@ -29,14 +31,15 @@ from tg_apicore.docs import add_api_docs, api_section_docs, api_method_docs
         responses=api_docs.COMPANIES_DELETE_RESPONSES,
     ),
 )
-class CompanyViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, ReadOnlyModelViewSet):
+class CompanyViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, ReadOnlyModelViewSet, DetailSerializerViewSet):
     """ Companies API - provides CRUD functionality for companies.
 
     Employees information is included in responses.
     """
 
     queryset = Company.objects.all()
-    serializer_class = CompanySerializer
+    serializer_class = CompanySummarySerializer
+    serializer_detail_class = CompanySerializer
 
     # pylint: disable=useless-super-delegation
     def list(self, request, *args, **kwargs):
@@ -60,12 +63,13 @@ class CompanyViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, ReadOnly
 
 @add_api_docs(
 )
-class EmploymentViewSet(ReadOnlyModelViewSet):
+class EmploymentViewSet(ReadOnlyModelViewSet, DetailSerializerViewSet):
     """ Employments API
     """
 
     queryset = Employment.objects.all()
-    serializer_class = EmploymentSerializer
+    serializer_class = EmploymentSummarySerializer
+    serializer_detail_class = EmploymentSerializer
 
     # pylint: disable=useless-super-delegation
     def list(self, request, *args, **kwargs):
