@@ -151,6 +151,13 @@ def validate_response_status_code(resp: Response, expected_status_code: int = 20
                                                     getattr(resp, 'data', resp.content))
 
 
+def validate_jsonapi_error_response(resp: Response, expected_status_code: int):
+    validate_response_status_code(resp, expected_status_code)
+    data = resp.json()
+
+    validate_keys(data, {'errors'})
+
+
 def validate_jsonapi_list_response(
     resp: Response, *, expected_count: int = None,
     expected_attributes: Set[str] = None, expected_relationships: Set[str] = None
