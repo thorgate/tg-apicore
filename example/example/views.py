@@ -20,7 +20,7 @@ class ExampleAPIDocumentationView(APIDocumentationView):
         docs_version = settings.API_VERSION_LATEST
         return '/api/%s/' % docs_version
 
-    def get_patterns(self) -> list:
+    def urlpatterns(self) -> list:
         from example import urls_api
 
         return [

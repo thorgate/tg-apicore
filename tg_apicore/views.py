@@ -25,7 +25,7 @@ class APIDocumentationView(TemplateView):
     def generate_docs(self):
         return generate_api_docs(
             title=self.title, description=self.get_description(),
-            site_url=self.get_site_url(), base_path=self.get_base_path(), patterns=self.get_patterns(),
+            site_url=self.get_site_url(), base_path=self.get_base_path(), patterns=self.urlpatterns(),
         )
 
     def get_context_data(self, **kwargs):
@@ -50,7 +50,7 @@ class APIDocumentationView(TemplateView):
         """ Should return your API's base path (path prefix), e.g. /api/v1/ """
         raise NotImplementedError()
 
-    def get_patterns(self) -> list:
+    def urlpatterns(self) -> list:
         """ Should return urlpatterns of your API """
         raise NotImplementedError()
 
