@@ -34,6 +34,7 @@ Features
     * Not interactive yet
 * Integrates `JSON API <http://jsonapi.org/>`_
     * Cursor pagination with configurable page size
+* Viewset classes for using different serializers and querysets for list/detail/edit endpoints
 * API-specific 404 view
 * Test utilities, e.g. for response validation
 * Versioning (WIP)
