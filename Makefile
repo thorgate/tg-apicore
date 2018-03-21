@@ -53,7 +53,9 @@ lint: ## check style with flake8
 	flake8 tg_apicore tests
 
 test: ## run tests quickly with the default Python
-	py.test
+	pip install -r requirements_dev.txt
+	pytest
+	pytest example/
 
 test-all: ## run tests on every Python version with tox
 	tox

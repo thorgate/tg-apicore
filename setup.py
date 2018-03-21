@@ -23,7 +23,10 @@ requirements = [
 
 setup_requirements = ['pytest-runner', ]
 
-test_requirements = ['pytest', ]
+test_requirements = [
+    'pytest',
+    'pytest-django',
+]
 
 setup(
     author="Thorgate",
