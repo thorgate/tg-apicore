@@ -1,6 +1,9 @@
+from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
 from rest_framework.compat import pygments_css
+from rest_framework.exceptions import NotFound
+from rest_framework.views import APIView
 
 from tg_apicore.schemas import generate_api_docs
 
@@ -22,7 +25,7 @@ class APIDocumentationView(TemplateView):
     def generate_docs(self):
         return generate_api_docs(
             title=self.title, description=self.get_description(),
-            site_url=self.get_site_url(), base_path=self.get_base_path(), patterns=self.get_patterns(),
+            site_url=self.get_site_url(), base_path=self.get_base_path(), patterns=self.urlpatterns(),
         )
 
     def get_context_data(self, **kwargs):
@@ -47,6 +50,31 @@ class APIDocumentationView(TemplateView):
         """ Should return your API's base path (path prefix), e.g. /api/v1/ """
         raise NotImplementedError()
 
-    def get_patterns(self) -> list:
+    def urlpatterns(self) -> list:
         """ Should return urlpatterns of your API """
         raise NotImplementedError()
+
+
+class PageNotFoundView(APIView):
+    """ 404 view for API urls.
+
+    Django's standard 404 page returns HTML. We want everything under API url prefix to return 404 as JSON.
+    """
+
+    authentication_classes = ()
+    permission_classes = ()
+
+    @classmethod
+    def urlpatterns(cls):
+        return [
+            # This one is for when the version is valid
+            url(r'^(?P<version>(\d{4}-\d{2}-\d{2}))/', cls.as_view()),
+            # This one is catch-all for everything else, including invalid versions
+            url(r'^', cls.as_view()),
+        ]
+
+    def initial(self, request, *args, **kwargs):
+        # Overriding initial() seems to be like  the easiest way that still keeps most of DRF's logic ala renderers.
+        super().initial(request, *args, **kwargs)
+
+        raise NotFound()
