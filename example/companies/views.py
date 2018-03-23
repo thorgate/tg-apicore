@@ -137,5 +137,11 @@ class EmploymentViewSet(ModelViewSet, DetailSerializerViewSet):
                 self.permission_denied(request)
 
     def get_list_queryset(self):
+        # If user isn't authenticated, do a quick bailout. This is a workaround for
+        #  https://github.com/encode/django-rest-framework/issues/5127 - DRF calling get_queryset() when rendering
+        #  browsable API response, even when user didn't have permissions.
+        if not self.request.user.is_authenticated:
+            return Employment.objects.none()
+
         user_companies = Employment.objects.filter(user=self.request.user).values_list('company_id', flat=True)
         return super().get_list_queryset().filter(company__in=user_companies)
