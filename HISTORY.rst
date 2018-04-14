@@ -2,7 +2,7 @@
 History
 =======
 
-Next version
+0.2.0 (2018-04-14)
 ------------------
 
 * Added PageNotFoundView (JSON-based 404 views)
