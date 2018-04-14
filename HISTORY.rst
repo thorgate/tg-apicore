@@ -2,6 +2,12 @@
 History
 =======
 
+0.2.1 (2018-04-14)
+------------------
+
+* Fix packaging (tg_apicore subdirs weren't included)
+
+
 0.2.0 (2018-04-14)
 ------------------
 
