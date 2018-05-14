@@ -1,5 +1,5 @@
 Welcome to Thorgate API Core's documentation!
-======================================
+=============================================
 
 .. toctree::
    :maxdepth: 2

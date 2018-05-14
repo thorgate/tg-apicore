@@ -9,7 +9,7 @@ class DetailSerializerViewSet(GenericAPIView):
 
     This is basically extended variant of DetailSerializerMixin from drf-extensions.
 
-    It provides additional queryset/serializer options for unsafe methods (*_modify) and makes it easy to override
+    It provides additional queryset/serializer options for unsafe methods (`*_modify`) and makes it easy to override
     methods that return serializer classes / querysets so that you can add your own logic with minimal effort.
 
     The detail / modify variants of queryset / serializer are optional and fall back to each other in
