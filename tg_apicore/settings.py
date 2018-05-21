@@ -99,7 +99,10 @@ def verify_settings():
 
     assert get_latest_version() in api_settings.ALLOWED_VERSIONS, \
         "Value of API_VERSION_LATEST setting is not among REST_FRAMEWORK's ALLOWED_VERSIONS"
-    return
+
+    # If the API_VERSION_LATEST setting isn't defined, do it now to make it easier to access via Django settings.
+    if not hasattr(settings, 'API_VERSION_LATEST'):
+        settings.API_VERSION_LATEST = get_latest_version()
 
 
 def get_latest_version() -> str:
