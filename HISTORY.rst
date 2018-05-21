@@ -2,6 +2,14 @@
 History
 =======
 
+0.3.0 (in development)
+----------------------
+
+* Add Usage section to README (to make starting up easier)
+* Most ``REST_FRAMEWORK`` settings are now automatically configured by Thorgate API Core.
+  Users only need to specify ``ALLOWED_VERSIONS``, the rest is optional.
+
+
 0.2.1 (2018-04-14)
 ------------------
 
