@@ -87,12 +87,6 @@ def invalid_django_setting_error(name, example_config):
 
 
 def verify_settings():
-    print("VERIFY")
-
-    print(api_settings.DEFAULT_PAGINATION_CLASS)
-    print(api_settings.DEFAULT_VERSIONING_CLASS)
-    print(api_settings.ALLOWED_VERSIONS)
-
     assert api_settings.ALLOWED_VERSIONS is not None, \
         invalid_drf_setting_error('ALLOWED_VERSIONS', "'ALLOWED_VERSIONS': ('2018-01-01',)")
     assert len(api_settings.ALLOWED_VERSIONS) >= 1
