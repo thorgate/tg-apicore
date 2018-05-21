@@ -12,8 +12,15 @@ JSON is returned by all API responses, including errors.
 All request data must use UTF-8 encoding.
 
 All dates and timestamps must be in extended ISO-8601 format and response data uses UTC timezone.
-Examples of valid inputs are `2017-10-01T12:34:56.123456Z`, `2017-10-01T12:34:56Z`, `2017-10-01T14:34Z`,
-`2017-10-01T14:34:56+02:00`, `2017-10-01T14:34:56`. If timezone isn't given, it defaults to UTC.
+Examples of valid inputs:
+
+- `2017-10-01T12:34:56.123456Z`
+- `2017-10-01T12:34:56Z`
+- `2017-10-01T14:34Z`
+- `2017-10-01T14:34:56+02:00`
+- `2017-10-01T14:34:56`
+
+If timezone isn't given, it defaults to UTC.
 Response data is always in extended ISO-8601 format, e.g. `2017-10-01T12:34:56.123456Z` or `2017-10-01T12:34:56Z`.
 
 

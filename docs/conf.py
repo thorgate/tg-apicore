@@ -20,7 +20,15 @@
 #
 import os
 import sys
+
+from django.conf import settings
+
 sys.path.insert(0, os.path.abspath('..'))
+
+# Make sure django is configured to avoid issues with importing settings
+# in code while generating the documentation.
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_settings')
+settings.configure()
 
 import tg_apicore
 
@@ -158,6 +166,3 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
