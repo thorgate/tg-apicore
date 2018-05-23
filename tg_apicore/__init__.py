@@ -2,6 +2,6 @@
 
 __author__ = """Thorgate"""
 __email__ = 'code@thorgate.eu'
-__version__ = '0.2.1'
+__version__ = '0.3.0'
 
 default_app_config = 'tg_apicore.apps.TgApicoreConfig'

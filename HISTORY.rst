@@ -2,8 +2,8 @@
 History
 =======
 
-0.3.0 (in development)
-----------------------
+0.3.0 (2018-05-23)
+------------------
 
 * Add Usage section to README (to make starting up easier)
 * Most ``REST_FRAMEWORK`` settings are now automatically configured by Thorgate API Core.
